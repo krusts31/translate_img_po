@@ -7,13 +7,13 @@ services:
     networks:
       - translate_bot_dev_net
     ports:
-      - ${BACKEND_PORT}:9001
+      - 9001:9001
     build:
       context: ./backend
       dockerfile: Dockerfile
       target: dev
     volumes:
-      - ./backend/app:/var/www/backend/app/:delegated
+      - ./backend/src:/var/www/backend/src/:delegated
     environment:
       ENV: ${BACKEND_ENV}
       PORT: ${BACKEND_PORT}
@@ -31,7 +31,7 @@ services:
     networks:
       - translate_bot_dev_net
     ports:
-      - ${FRONTEND_PORT}:9005
+      - 9000:3000
     volumes:
       - ./frontend/src/:/frontend/src/:delegated
 
