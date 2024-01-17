@@ -1,0 +1,41 @@
+version: '2.4'
+
+services:
+  backend:
+    restart: always
+    hostname: backend
+    networks:
+      - translate_bot_dev_net
+    ports:
+      - ${BACKEND_PORT}:9001
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      target: dev
+    volumes:
+      - ./backend/app:/var/www/backend/app/:delegated
+    environment:
+      ENV: ${BACKEND_ENV}
+      PORT: ${BACKEND_PORT}
+
+  fronend:
+    restart: always
+    hostname: frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      target: dev
+    depends_on:
+      backend:
+        condition: service_started
+    networks:
+      - translate_bot_dev_net
+    ports:
+      - ${FRONTEND_PORT}:9005
+    volumes:
+      - ./frontend/src/:/frontend/src/:delegated
+
+networks:
+  translate_bot_dev_net:
+    driver: bridge
+    name: translate_bot_dev_net

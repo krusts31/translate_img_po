@@ -1,0 +1,36 @@
+version: '2.4'
+
+services:
+  backend:
+    hostname: backend
+    networks:
+      - translate_bot_test_net
+    ports:
+      - ${BACKEND_PORT}:9001
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      target: test
+    environment:
+      ENV:  ${BACKEND_ENV}
+      PORT: ${BACKEND_PORT}
+  fronend:
+    hostname: frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      target: test
+    depends_on:
+      backend:
+        condition: service_started
+      postgres:
+        condition: service_healthy
+    networks:
+      - translate_bot_test_net
+    ports:
+      - ${FRONTEND_PORT}:9005
+
+networks:
+  translate_bot_test_net:
+    driver: bridge
+    name: translate_bot_test_net

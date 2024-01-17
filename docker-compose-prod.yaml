@@ -1,0 +1,37 @@
+version: '2.4'
+
+services:
+  backend:
+    restart: always
+    hostname: backend
+    networks:
+      - ainstyn_net
+    ports:
+      - ${BACKEND_PORT}:9001
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      target: prod
+    environment:
+      PORT: ${BACKEND_PORT}
+      ENV:             ${BACKEND_ENV}
+
+  frontend:
+    restart: always
+    hostname: frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      target: prod
+    depends_on:
+      backend:
+        condition: service_started
+    networks:
+      - ainstyn_net
+    ports:
+      - ${FRONTEND_PORT}:9005
+
+networks:
+  ainstyn_net:
+    driver: bridge
+    name: ainstyn_net
