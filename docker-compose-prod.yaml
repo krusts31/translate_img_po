@@ -2,22 +2,20 @@ version: '2.4'
 
 services:
   backend:
-    restart: always
     hostname: backend
-    networks:
-      - ainstyn_net
-    ports:
-      - ${BACKEND_PORT}:9001
     build:
       context: ./backend
       dockerfile: Dockerfile
       target: prod
+    networks:
+      - translate_bot_prod_net
+    ports:
+      - ${BACKEND_PORT}:${BACKEND_PORT}
     environment:
+      ENV:  ${BACKEND_ENV}
       PORT: ${BACKEND_PORT}
-      ENV:             ${BACKEND_ENV}
 
-  frontend:
-    restart: always
+  fronend:
     hostname: frontend
     build:
       context: ./frontend
@@ -27,11 +25,11 @@ services:
       backend:
         condition: service_started
     networks:
-      - ainstyn_net
+      - translate_bot_prod_net
     ports:
-      - ${FRONTEND_PORT}:9005
+      - ${FRONTEND_PORT}:${FRONTEND_PORT}
 
 networks:
-  ainstyn_net:
+  translate_bot_prod_net:
     driver: bridge
-    name: ainstyn_net
+    name: translate_bot_prod_net

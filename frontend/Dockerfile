@@ -8,7 +8,7 @@ RUN npm install -g npm@10.3.0
 
 LABEL maintainer=01gr0nd5
 
-WORKDIR /frontend
+WORKDIR /var/www/frontend
 
 COPY --chown=node:node ./package.json ./next.config.js ./postcss.config.js ./tsconfig.json ./tailwind.config.ts ./next-env.d.ts ./
 

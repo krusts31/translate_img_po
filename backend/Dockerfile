@@ -14,7 +14,7 @@ RUN pip install --no-cache-dir --upgrade -r ./requirements.txt
 # Development image
 FROM base as dev
 COPY ./src ./src
-CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "9001", "--reload"]
+CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", $BACKEND_PORT, "--reload"]
 
 # Testing image
 FROM base as test
@@ -26,4 +26,4 @@ CMD ["pytest", "./src"]
 # Production image
 FROM base as prod
 COPY ./src ./src
-CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "9001"]
+CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", $BACKEND_PORT]
