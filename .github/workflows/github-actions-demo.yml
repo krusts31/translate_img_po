@@ -21,4 +21,4 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - name: run tests
         run: |
-          make test
+          bash test.sh
