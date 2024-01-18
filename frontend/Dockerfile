@@ -2,8 +2,6 @@ FROM node:20-alpine as base
 
 ENV PATH /node_modules/.bin:$PATH
 
-ENV NODE_ENV=production
-
 RUN npm install -g npm@10.3.0
 
 LABEL maintainer=01gr0nd5
@@ -23,20 +21,9 @@ ENTRYPOINT ["tini", "--"]
 ###DEV###
 FROM base as dev
 
-ENV NODE_ENV=development
-
 RUN npm install
 
-#COPY --chown=node:node ./.env ./
-
 CMD ["npm", "run", "dev", "--host"] 
-
-###PRE-PROD###
-FROM dev as build
-
-COPY --chown=node:node ./.env.production ./
-
-RUN npm run build
 
 ###TEST###
 FROM dev as test
@@ -49,13 +36,18 @@ FROM test as audit
 CMD ["npm", "run", "audit"]
 
 ###PROD###
-FROM nginx:1.25-alpine as prod
+FROM base as prod
 
-COPY --chown=nginx:nginx --from=build ./frontend/dist ./build
+RUN apk update &&\
+	apk upgrade &&\
+	apk add --no-cache\
+	nginx&&\
+	mkdir -p /var/www/html&&\
+	npm run build
 
-COPY default.conf /etc/nginx/conf.d/
+RUN mv default.conf /etc/nginx/http.d/
 
-HEALTHCHECK  --interval=30s --timeout=3s \
-  CMD wget --no-verbose --tries=3 --spider http://127.0.0.1:3000/ || exit 1
+HEALTHCHECK  --interval=30s --timeout=3s\
+	CMD ["sh", "-c", "wget --no-verbose --tries=3 --spider http://127.0.0.1:$PORT/ || exit 1"]
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["/bin/sh", "run.sh"]

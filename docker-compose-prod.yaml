@@ -28,6 +28,8 @@ services:
       - translate_bot_prod_net
     ports:
       - ${FRONTEND_PORT}:${FRONTEND_PORT}
+    environment:
+      PORT: ${FRONTEND_PORT}
 
 networks:
   translate_bot_prod_net:

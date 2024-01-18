@@ -6,15 +6,13 @@ RUN apk update && apk upgrade
 RUN apk add python3 py3-pip tesseract-ocr-data-nld --no-cache && ln -sf python3 /usr/bin/python
 RUN pip install --no-cache --upgrade pip setuptools
 COPY ./requirements.txt ./requirements.txt
-#COPY ./src.py ./src.py
-#COPY ./img/ ./img/
-COPY ./po/ ./po/
+COPY ./ ./
 RUN pip install --no-cache-dir --upgrade -r ./requirements.txt
 
 # Development image
 FROM base as dev
 COPY ./src ./src
-CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", $BACKEND_PORT, "--reload"]
+CMD ["sh", "-c", "uvicorn src.main:app --host 0.0.0.0 --port $PORT --reload"]
 
 # Testing image
 FROM base as test
@@ -26,4 +24,4 @@ CMD ["pytest", "./src"]
 # Production image
 FROM base as prod
 COPY ./src ./src
-CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", $BACKEND_PORT]
+CMD ["sh", "-c", "uvicorn src.main:app --host 0.0.0.0 --port $PORT"]
