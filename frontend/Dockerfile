@@ -10,9 +10,7 @@ LABEL maintainer=01gr0nd5
 
 WORKDIR /var/www/frontend
 
-COPY --chown=node:node ./package.json ./next.config.js ./postcss.config.js ./tsconfig.json ./tailwind.config.ts ./next-env.d.ts ./
-
-COPY --chown=node:node ./public/  ./public
+COPY --chown=node:node ./ ./
 
 RUN apk add tini --no-cache\
 	&& npm config list\
@@ -29,9 +27,7 @@ ENV NODE_ENV=development
 
 RUN npm install
 
-COPY --chown=node:node ./src ./src
-
-COPY --chown=node:node ./.env ./
+#COPY --chown=node:node ./.env ./
 
 CMD ["npm", "run", "dev", "--host"] 
 
@@ -45,7 +41,7 @@ RUN npm run build
 ###TEST###
 FROM dev as test
 
-CMD ["npm", "run", "test-ci"]
+CMD ["npm", "run", "test:ci"]
 
 ###AUDIT###
 FROM test as audit
