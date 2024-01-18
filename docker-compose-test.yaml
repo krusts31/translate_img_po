@@ -15,7 +15,7 @@ services:
       ENV:  ${BACKEND_ENV}
       PORT: ${BACKEND_PORT}
 
-  fronend:
+  frontend:
     hostname: frontend
     build:
       context: ./frontend
