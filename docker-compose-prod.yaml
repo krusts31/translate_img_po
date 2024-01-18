@@ -1,0 +1,37 @@
+version: '2.4'
+
+services:
+  backend:
+    hostname: backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      target: prod
+    networks:
+      - translate_bot_prod_net
+    ports:
+      - ${BACKEND_PORT}:${BACKEND_PORT}
+    environment:
+      ENV:  ${BACKEND_ENV}
+      PORT: ${BACKEND_PORT}
+
+  fronend:
+    hostname: frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      target: prod
+    depends_on:
+      backend:
+        condition: service_started
+    networks:
+      - translate_bot_prod_net
+    ports:
+      - ${FRONTEND_PORT}:${FRONTEND_PORT}
+    environment:
+      PORT: ${FRONTEND_PORT}
+
+networks:
+  translate_bot_prod_net:
+    driver: bridge
+    name: translate_bot_prod_net

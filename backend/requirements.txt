@@ -1,0 +1,11 @@
+pytesseract
+
+polib
+deep-translator
+requests
+fastapi
+flake8
+uvicorn[standard]
+pydantic
+loguru
+requests

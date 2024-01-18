@@ -1,0 +1,39 @@
+version: '2.4'
+
+services:
+  backend:
+    hostname: backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      target: dev
+    volumes:
+      - ./backend/src:/var/www/backend/src:delegated
+    networks:
+      - translate_bot_dev_net
+    ports:
+      - ${BACKEND_PORT}:${BACKEND_PORT}
+    environment:
+      ENV:  ${BACKEND_ENV}
+      PORT: ${BACKEND_PORT}
+
+  fronend:
+    hostname: frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      target: dev
+    depends_on:
+      backend:
+        condition: service_started
+    volumes:
+      - ./frontend/app:/var/www/frontend/app:delegated
+    networks:
+      - translate_bot_dev_net
+    ports:
+      - ${FRONTEND_PORT}:${FRONTEND_PORT}
+
+networks:
+  translate_bot_dev_net:
+    driver: bridge
+    name: translate_bot_dev_net

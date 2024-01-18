@@ -1,5 +1,0 @@
-pytesseract
-
-polib
-deep-translator
-requests
