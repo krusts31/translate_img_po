@@ -27,7 +27,7 @@ services:
       backend:
         condition: service_started
     volumes:
-      - ./frontend/src:/var/www/frontend/src:delegated
+      - ./frontend/app:/var/www/frontend/app:delegated
     networks:
       - translate_bot_dev_net
     ports:
