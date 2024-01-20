@@ -1,0 +1,3 @@
+[submodule "backend/src/libpy"]
+	path = backend/src/libpy
+	url = git@github.com:krusts31/libpy.git
