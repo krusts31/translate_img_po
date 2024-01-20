@@ -10,6 +10,7 @@ def translate(text: str, target_language: str) -> str:
         return ""
 
 target_file = "wp-plugins-woocommerce-stable-lv.po"
+
 target_language = "lv"
 
 po = polib.pofile('po/' + target_file)
@@ -28,3 +29,4 @@ for entry in po:
     print("Total translated: ", po.percent_translated(), "%")
 
 po.save("translated" + target_file)
+po.save_as_mofile('path/to/output.mo')

@@ -1,4 +1,5 @@
 httpx
 pytest
 hypothesis
+schemathesis
 requests
