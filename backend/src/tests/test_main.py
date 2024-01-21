@@ -35,3 +35,15 @@ def test_upload_accepted_file(name: str):
             files = {"file": (temp_file.name, temp_file, f'application/{f}')}
             response = client.post("/upload-file", files=files)
             assert response.status_code == 200
+
+@given(name=text(alphabet=strategies.characters(blacklist_characters="/\x00", whitelist_categories=('Lu', 'Ll'))))
+@settings(max_examples=test_count)
+def test_upload_sneaky_file(name: str):
+    for f in ["PO", "PNG","JPEG", "JPG", "PNG", "pO", "jPg"]:
+        with tempfile.NamedTemporaryFile(suffix="." + f, prefix=name, mode='w+b') as temp_file:
+            temp_file.write(b'Test content')
+            temp_file.seek(0)
+            files = {"file": (temp_file.name, temp_file, f'application/{f}')}
+            response = client.post("/upload-file", files=files)
+            assert response.status_code == 400
+            assert response.json() == {"detail": "Accepted types: po png jpeg jpg png"}
