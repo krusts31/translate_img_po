@@ -14,12 +14,12 @@ def translate(text: str, target_language: str) -> str:
         print(f"Error during translation: {e}")
         return ""
 
-po = polib.pofile(target_file)
+po = polib.pofile("po-files/" + target_file)
 
 for entry in po:
     if entry.msgstr == "" and entry.msgid != "":
         entry.msgstr = translate(entry.msgid, target_language)
-    if entry.msgid_plural != "" and entry.msgstr_plural == "":
+    if entry.msgid_plural != "" or entry.msgstr_plural == "":
         entry.msgstr_plural = {}
 
         translated_singular = translate(entry.msgid, target_language)
@@ -29,5 +29,5 @@ for entry in po:
         entry.msgstr_plural[1] = translated_plural
     print("Total translated: ", po.percent_translated(), "%", flush=True)
 
-po.save(target_file)
-po.save_as_mofile(target_file + '.mo')
+po.save("result/" + target_file)
+po.save_as_mofile("result/" + target_file + '.mo')

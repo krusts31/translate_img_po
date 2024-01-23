@@ -1,0 +1,458 @@
+# Translation of Plugins - WooCommerce - Stable (latest release) in Latvian
+# This file is distributed under the same license as the Plugins - WooCommerce - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2023-08-17 16:25:55+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n % 10 == 0 || n % 100 >= 11 && n % 100 <= 19) ? 0 : ((n % 10 == 1 && n % 100 != 11) ? 1 : 2);\n"
+"X-Generator: GlotPress/4.0.0-alpha.11\n"
+"Language: lv\n"
+"Project-Id-Version: Plugins - WooCommerce - Stable (latest release)\n"
+
+#: assets/client/blocks/collection-rating-filter/block.json
+msgctxt "block description"
+msgid "Enable customers to filter the product collection by rating."
+msgstr ""
+
+#: assets/client/blocks/collection-rating-filter/block.json
+msgctxt "block title"
+msgid "Collection Rating Filter"
+msgstr ""
+
+#: assets/client/blocks/collection-attribute-filter/block.json
+msgctxt "block title"
+msgid "Collection Attribute Filter"
+msgstr ""
+
+#: assets/client/blocks/collection-active-filters/block.json
+msgctxt "block title"
+msgid "Collection Active Filters"
+msgstr ""
+
+#: assets/client/admin/product-editor/blocks/product-fields/product-list-field/block.json
+#: assets/client/admin/product-editor/blocks/product-fields/product-list/block.json
+msgctxt "block description"
+msgid "The product list."
+msgstr ""
+
+#: assets/client/admin/product-editor/blocks/product-fields/product-list-field/block.json
+#: assets/client/admin/product-editor/blocks/product-fields/product-list/block.json
+msgctxt "block title"
+msgid "Product list"
+msgstr ""
+
+#: assets/client/admin/product-editor/blocks/generic/product-section-description/block.json
+#: assets/client/admin/product-editor/blocks/generic/section-description/block.json
+msgctxt "block description"
+msgid "The product section description."
+msgstr ""
+
+#: assets/client/admin/product-editor/blocks/generic/product-section-description/block.json
+#: assets/client/admin/product-editor/blocks/generic/section-description/block.json
+msgctxt "block title"
+msgid "Product section description"
+msgstr ""
+
+#: assets/client/blocks/product-collection.js:1
+msgid "Automatically adjust the number of columns to better fit smaller screens."
+msgstr ""
+
+#: assets/client/blocks/product-collection.js:1
+msgid "Responsive"
+msgstr ""
+
+#: assets/client/blocks/collection-filters.js:1
+msgid "Filter by Stock status"
+msgstr ""
+
+#: assets/client/blocks/collection-attribute-filter.js:10
+msgid "attribute"
+msgstr ""
+
+#. translators: %s is the number of incompatible extensions.
+#: assets/client/blocks/cart.js:35 assets/client/blocks/checkout.js:30
+msgid "%s more incompatibility"
+msgid_plural "%s more incompatibilites"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: assets/client/blocks/all-products.js:22
+msgid "Category: "
+msgstr ""
+
+#: assets/client/admin/wp-admin-scripts/command-palette.js:1
+msgid "WooCommerce Settings: %s"
+msgstr ""
+
+#: assets/client/admin/wp-admin-scripts/command-palette-analytics.js:1
+msgid "WooCommerce Analytics: %s"
+msgstr ""
+
+#: assets/client/admin/product-editor/index.js:2
+msgid "Unselect variation"
+msgstr ""
+
+#: assets/client/admin/product-editor/index.js:2
+msgid "Sortable handler"
+msgstr ""
+
+#: assets/client/admin/product-editor/index.js:2
+msgid "Click and drag to reorder on the product page."
+msgstr ""
+
+#: assets/client/admin/product-editor/index.js:2
+msgid "Reorder products in this group"
+msgstr ""
+
+#: assets/client/admin/product-editor/index.js:2
+msgid "Search for products"
+msgstr ""
+
+#: assets/client/admin/product-editor/index.js:2
+msgid "Add and manage products in this group to let customers purchase them all in one go."
+msgstr ""
+
+#: assets/client/admin/product-editor/index.js:2
+msgid "Add products to this group"
+msgstr ""
+
+#: assets/client/admin/product-editor/index.js:2
+msgid "Nothing yet. Type to create."
+msgstr ""
+
+#: assets/client/admin/product-editor/blocks/product-fields/product-list/edit.js:1
+#: assets/client/admin/product-editor/index.js:2
+msgid "Remove product"
+msgstr ""
+
+#: assets/client/admin/product-editor/blocks/product-fields/product-list/edit.js:1
+#: assets/client/admin/product-editor/index.js:2
+msgid "Preview the product"
+msgstr ""
+
+#: assets/client/admin/product-editor/blocks/product-fields/product-list/edit.js:1
+#: assets/client/admin/product-editor/index.js:2
+msgid "Tip: Group together items that have a clear relationship or compliment each other well, e.g., garment bundles, camera kits, or skincare product sets."
+msgstr ""
+
+#: assets/client/admin/product-editor/blocks/product-fields/product-list/edit.js:1
+#: assets/client/admin/product-editor/index.js:2
+msgid "Reorder"
+msgstr ""
+
+#: assets/client/admin/product-editor/blocks/product-fields/description/edit.js:1
+#: assets/client/admin/product-editor/index.js:2
+msgid "Edit in full editor"
+msgstr ""
+
+#: assets/client/admin/product-editor/blocks/product-fields/description/components/full-editor-toolbar-button.js:1
+#: assets/client/admin/product-editor/index.js:2
+msgid "Full editor"
+msgstr ""
+
+#: assets/client/admin/product-editor/blocks/product-fields/description/components/full-editor-toolbar-button.js:1
+#: assets/client/admin/product-editor/index.js:2
+msgid "Edit Product description"
+msgstr ""
+
+#: assets/client/admin/chunks/marketplace.js:1
+msgid "View in Plugins"
+msgstr ""
+
+#: assets/client/admin/chunks/marketplace.js:1
+msgid "View docs"
+msgstr ""
+
+#: assets/client/admin/chunks/marketplace.js:1
+msgid "Would you like to install this extension?"
+msgstr ""
+
+#: assets/client/admin/chunks/marketplace.js:1
+msgid "Keep the momentum going and start setting up your extension."
+msgstr ""
+
+#: assets/client/admin/chunks/marketplace.js:1
+msgid "In order to install a product, you need to first connect your account."
+msgstr ""
+
+#: assets/client/admin/chunks/marketplace.js:1
+msgid "Add to store"
+msgstr ""
+
+#: assets/client/admin/chunks/marketplace.js:1
+msgid "You are ready to go!"
+msgstr ""
+
+#: assets/client/admin/chunks/marketplace.js:1
+msgid "Could not find subscription with product key %s."
+msgstr ""
+
+#: assets/client/admin/chunks/marketplace.js:1
+msgid "%s couldn’t be installed. Please install the product manually."
+msgstr ""
+
+#: assets/client/admin/chunks/marketplace.js:1
+msgid "Error loading subscriptions: %s"
+msgstr ""
+
+#: assets/client/admin/chunks/customize-store.js:1
+msgid "But don't let that stop you! Start customizing the look and feel of your store by adding your logo and selecting your colors and layout. Take a quick tour to discover what's possible."
+msgstr ""
+
+#: assets/client/admin/chunks/customize-store.js:1
+msgid "Our AI tool had a few issues generating your content."
+msgstr ""
+
+#: assets/client/admin/chunks/customize-store.js:1
+msgid "Welcome to your store!"
+msgstr ""
+
+#: assets/client/admin/chunks/customize-store.js:1
+msgid "Select the pair of fonts that best suits your brand. The larger font will be used for headings, and the smaller for supporting content. You can change your font at any time in <EditorLink>Editor</EditorLink> | <StyleLink>Styles</StyleLink>."
+msgstr ""
+
+#: assets/client/admin/chunks/customize-store.js:1
+msgid "Choose the color palette that best suits your brand. Want to change it? Create your custom color palette below, or update it later in <EditorLink>Editor</EditorLink> | <StyleLink>Styles</StyleLink>."
+msgstr ""
+
+#: templates/order/customer-history.php:46
+msgid "This is the Customer Lifetime Value, or the total amount you have earned from this customer's orders."
+msgstr ""
+
+#: templates/order/customer-history.php:43
+msgid "Total revenue"
+msgstr ""
+
+#: templates/order/customer-history.php:31
+msgid "Total number of non-cancelled, non-failed orders for this customer, including the current one."
+msgstr ""
+
+#: templates/order/customer-history.php:28
+msgid "Total orders"
+msgstr ""
+
+#: templates/order/attribution-data-fields.php:93
+msgid "The number of unique pages viewed by the customer prior to this order."
+msgstr ""
+
+#: templates/order/attribution-data-fields.php:90
+msgid "Session page views"
+msgstr ""
+
+#: templates/order/attribution-data-fields.php:81
+msgid "Device type"
+msgstr ""
+
+#: templates/order/attribution-data-fields.php:72
+msgid "UTM medium"
+msgstr ""
+
+#: templates/order/attribution-data-fields.php:65
+msgid "UTM source"
+msgstr ""
+
+#: templates/order/attribution-data-fields.php:58
+msgid "UTM campaign"
+msgstr ""
+
+#: templates/order/attribution-data-fields.php:51
+msgid "Source type"
+msgstr ""
+
+#: templates/order/attribution-data-fields.php:42
+msgid "Hide details"
+msgstr ""
+
+#: templates/order/attribution-data-fields.php:41
+msgid "Show details"
+msgstr ""
+
+#: src/StoreApi/Schemas/V1/CheckoutSchema.php:181
+msgid "Additional fields to be persisted on the order."
+msgstr ""
+
+#: src/StoreApi/Routes/V1/AI/Product.php:54
+msgid "Whether the product being updated is the last one in the loop"
+msgstr ""
+
+#: src/Internal/Traits/OrderAttributionMeta.php:307
+msgid "Web admin"
+msgstr ""
+
+#: src/Internal/Traits/OrderAttributionMeta.php:301
+msgid "Direct"
+msgstr ""
+
+#. translators: %s is the source value
+#: src/Internal/Traits/OrderAttributionMeta.php:295
+msgid "Referral: %s"
+msgstr ""
+
+#. translators: %s is the source value
+#: src/Internal/Traits/OrderAttributionMeta.php:289
+msgid "Organic: %s"
+msgstr ""
+
+#. translators: %s is the source value
+#: src/Internal/Traits/OrderAttributionMeta.php:283
+msgid "Source: %s"
+msgstr ""
+
+#: src/Internal/Traits/OrderAttributionMeta.php:213
+msgid "Order not found."
+msgstr ""
+
+#: src/Internal/ProductImage/MatchImageBySKU.php:69
+msgid "Set product featured image when uploaded image file name matches product SKU."
+msgstr ""
+
+#: src/Internal/ProductImage/MatchImageBySKU.php:68
+msgid "Match images"
+msgstr ""
+
+#: src/Internal/ProductImage/MatchImageBySKU.php:63
+msgid "Product image matching by SKU"
+msgstr ""
+
+#: src/Internal/Orders/OrderAttributionController.php:441
+#: templates/order/attribution-data-fields.php:27
+msgid "Origin"
+msgstr ""
+
+#. translators: %s is the field name
+#: src/Internal/Orders/OrderAttributionBlocksController.php:193
+#: src/Internal/Traits/OrderAttributionMeta.php:368
+msgid "Order attribution field: %s"
+msgstr ""
+
+#. translators: %s is the property type
+#: src/Internal/Orders/OrderAttributionBlocksController.php:176
+msgid "Value of type %s was posted to the order attribution callback"
+msgstr ""
+
+#: src/Internal/Features/ProductBlockEditor/ProductTemplates/SimpleProductTemplate.php:383
+msgid "Make a collection of related products, enabling customers to purchase multiple items together."
+msgstr ""
+
+#: src/Internal/Features/ProductBlockEditor/ProductTemplates/SimpleProductTemplate.php:382
+msgid "Products in this group"
+msgstr ""
+
+#. translators: %1$s: Downloads settings link opening tag. %2$s: Downloads
+#. settings link closing tag.
+#: src/Internal/Features/ProductBlockEditor/ProductTemplates/ProductVariationTemplate.php:197
+#: src/Internal/Features/ProductBlockEditor/ProductTemplates/SimpleProductTemplate.php:442
+msgid "Add any files you'd like to make available for the customer to download after purchasing, such as instructions or warranty info. Store-wide updates can be managed in your %1$sproduct settings%2$s."
+msgstr ""
+
+#: src/Internal/Features/FeaturesController.php:219
+msgid "Enable this feature to track and credit channels and campaigns that contribute to orders on your site"
+msgstr ""
+
+#: src/Internal/Features/FeaturesController.php:218
+msgid "Order Attribution"
+msgstr ""
+
+#: src/Internal/DataStores/Orders/LegacyDataHandler.php:182
+msgid "Order is not an HPOS order."
+msgstr ""
+
+#: src/Internal/DataStores/Orders/LegacyDataHandler.php:149
+msgid "Data in posts table appears to be more recent than in HPOS tables."
+msgstr ""
+
+#. translators: %d is an order ID.
+#: src/Internal/DataStores/Orders/LegacyDataHandler.php:145
+msgid "%d is not a valid order ID."
+msgstr ""
+
+#: src/Internal/Admin/Orders/MetaBoxes/OrderAttribution.php:71
+msgid "No order source data available."
+msgstr ""
+
+#: src/Internal/Admin/Orders/MetaBoxes/OrderAttribution.php:46
+msgid "Desktop"
+msgstr ""
+
+#: src/Internal/Admin/Orders/MetaBoxes/OrderAttribution.php:43
+msgid "Tablet"
+msgstr ""
+
+#: src/Internal/Admin/Orders/MetaBoxes/OrderAttribution.php:40
+msgid "Mobile"
+msgstr ""
+
+#: src/Internal/Admin/Orders/Edit.php:262
+msgid "Customer history"
+msgstr ""
+
+#. Translators: %s order type name.
+#: src/Internal/Admin/Orders/Edit.php:241
+msgid "%s attribution"
+msgstr ""
+
+#. translators: %s is a number.
+#: src/Internal/Admin/Logging/PageController.php:680
+msgid "⚠️ Only %s files can be searched at one time. Try filtering the file list before searching."
+msgstr ""
+
+#: src/Internal/Admin/Logging/PageController.php:664
+msgid "Search within these files"
+msgstr ""
+
+#. translators: %s is a number of days.
+#: src/Internal/Admin/Logging/LogHandlerFileV2.php:212
+msgid "The retention period for log files is %s day."
+msgid_plural "The retention period for log files is %s days."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#. translators: %s is a number of log files.
+#: src/Internal/Admin/Logging/LogHandlerFileV2.php:200
+msgid "%s expired log file was deleted."
+msgid_plural "%s expired log files were deleted."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#. translators: %s is a line number in a file.
+#: src/Internal/Admin/Logging/FileV2/SearchListTable.php:183
+msgid "Line %s"
+msgstr ""
+
+#: src/Internal/Admin/Logging/FileV2/SearchListTable.php:142
+msgid "Matched Line"
+msgstr ""
+
+#: src/Internal/Admin/Logging/FileV2/SearchListTable.php:141
+msgid "Line #"
+msgstr ""
+
+#. translators: %s is a number.
+#: src/Internal/Admin/Logging/FileV2/SearchListTable.php:114
+msgid "The number of search results has reached the limit of %s. Try refining your search."
+msgstr ""
+
+#: src/Internal/Admin/Logging/FileV2/SearchListTable.php:60
+msgid "No search results."
+msgstr ""
+
+#: src/Internal/Admin/Logging/FileV2/FileExporter.php:61
+msgid "Could not access file."
+msgstr ""
+
+#: src/Internal/Admin/Logging/FileV2/FileController.php:555
+msgid "Could not write to the temp directory. Try downloading files one at a time instead."
+msgstr ""
+
+#: src/Internal/Admin/Logging/FileV2/FileController.php:546
+msgid "Could not access the specified files."
+msgstr ""
+
+#: src/Internal/Admin/Logging/FileV2/FileController.php:375
+msgid "Multiple files match this ID."
+msgstr ""
