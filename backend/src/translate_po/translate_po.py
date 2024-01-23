@@ -17,17 +17,22 @@ def translate(text: str, target_language: str) -> str:
 po = polib.pofile("po-files/" + target_file)
 
 for entry in po:
-    if entry.msgstr == "" and entry.msgid != "":
-        entry.msgstr = translate(entry.msgid, target_language)
-    if entry.msgid_plural != "" or entry.msgstr_plural == "":
+    if entry.msgid_plural != "" and entry.msgid != "":
         entry.msgstr_plural = {}
 
-        translated_singular = translate(entry.msgid, target_language)
+        translated = translate(entry.msgid, target_language)
         translated_plural = translate(entry.msgid_plural, target_language)
 
-        entry.msgstr_plural[0] = translated_singular
+        entry.msgstr_plural[0] = translated
         entry.msgstr_plural[1] = translated_plural
+    if entry.msgstr == "" and entry.msgid != "":
+        entry.msgstr = translate(entry.msgid, target_language)
     print("Total translated: ", po.percent_translated(), "%", flush=True)
+
+for entry in po:
+    if entry.msgstr is None:
+        print("ERROR", entry)
+        entry.msgstr = ''
 
 po.save("result/" + target_file)
 po.save_as_mofile("result/" + target_file + '.mo')
