@@ -49,10 +49,15 @@ for filename in os.listdir('/app/src/'):
                 for index, row in enumerate(reader):
                     print("progress:", index / row_count * 100, "%")
 
-                    new_row = {
-                        'name_' + target_language: row['name_lv'],
-                        'picture': row['picture']
-                    }
+                    new_row = {}
+                    try:
+                        new_row['name_' + target_language] =  row['name_lv'],
+                    except Exception as e:
+                        new_row['name_' + target_language] =  "name_missing",
+                    try:
+                        new_row['picture'] = row['picture']
+                    except Exception as e:
+                        new_row['picture'] = ""
                     try:
                         new_row['category_id'] = row['category_id']
                     except Exception as e:
