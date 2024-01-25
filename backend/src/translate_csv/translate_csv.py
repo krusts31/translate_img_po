@@ -27,7 +27,7 @@ def translate(text: str) -> str:
 
 for filename in os.listdir('/app/src/'):
     if filename.endswith('.csv'):
-        with open(target_language + '.csv', 'w', newline='') as csvfile:
+        with open('dest/' + target_language + '.csv', 'w', newline='') as csvfile:
             fieldnames: [str] = [
                 'name_' + target_language,
                 'information_' + target_language,
@@ -51,9 +51,12 @@ for filename in os.listdir('/app/src/'):
 
                     new_row = {
                         'name_' + target_language: row['name_lv'],
-                        'picture': row['picture'],
-                        #'category_id': row['category_id']
+                        'picture': row['picture']
                     }
+                    try:
+                        new_row['category_id'] = row['category_id']
+                    except Exception as e:
+                        new_row['category_id'] = 0
 
                     for field in ['information_lv', 'tech_lv', 'description_lv', 'keywords_lv', 'small_text_lv', 'meta_description_lv']:
                         if field in row:
@@ -63,3 +66,4 @@ for filename in os.listdir('/app/src/'):
                         else:
                             print(f"Warning: Field {field} not found in row.")
                     writer.writerow(new_row)
+                    exit(0)
