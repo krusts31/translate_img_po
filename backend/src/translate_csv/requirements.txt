@@ -1,0 +1,10 @@
+pytesseract
+
+deep-translator
+
+fastapi
+flake8
+pydantic
+loguru
+requests
+python-multipart
