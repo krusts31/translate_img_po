@@ -71,4 +71,3 @@ for filename in os.listdir('/app/src/'):
                         else:
                             print(f"Warning: Field {field} not found in row.")
                     writer.writerow(new_row)
-                    exit(0)
